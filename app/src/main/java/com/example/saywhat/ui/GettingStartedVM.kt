@@ -3,6 +3,7 @@ package com.example.saywhat.ui
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import com.example.saywhat.app.AppData
+import com.example.saywhat.app.Errors
 import com.example.saywhat.databinding.ItemButtonBinding
 import com.example.saywhat.databinding.ItemEditTextBinding
 import com.example.saywhat.databinding.ItemTextViewBinding
@@ -14,15 +15,19 @@ import javax.inject.Inject
 
 @HiltViewModel
 class GettingStartedVM @Inject constructor(
-    private val appData: AppData
+    private val appData: AppData,
+    private val errors: Errors,
 ) : ViewModel() {
     // # User Intents
     fun userSetYoutubeLink(s: String) {
-        TODO()
+        appData.youtubeLink = s
     }
 
     fun userSubmit() {
-        navForward.onNext(Unit)
+        when {
+            runCatching { appData.youtubeLink }.isFailure -> errors.onNext(MissingYouTubeLinkException())
+            else -> navForward.onNext(Unit)
+        }
     }
 
     // # Events

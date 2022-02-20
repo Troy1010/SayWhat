@@ -36,12 +36,12 @@ class GettingStartedVM @Inject constructor(
     // # User Intents
     fun userSetYouTubeLink(s: String) {
         runCatching { appData.youtubeLink = youTubeIDParser.parse(s) }
-            .getOrElse { errors.onNext(it) }
+            .getOrElse { errors.easyEmit(it) }
     }
 
     fun userSubmit() {
         when {
-            runCatching { appData.youtubeLink }.isFailure -> errors.onNext(MissingYouTubeLinkException())
+            runCatching { appData.youtubeLink }.isFailure -> errors.easyEmit(MissingYouTubeLinkException())
             else -> navForward.easyEmit(Unit)
         }
     }
@@ -56,7 +56,7 @@ class GettingStartedVM @Inject constructor(
     val highlightAtYouTubeLinkInput =
         merge(
             youTubeLinkEditTextTouched.map { null },
-            errors.asFlow().filter { it is YouTubeIDParserException }.map { R.color.colorErrorRed },
+            errors.filter { it is YouTubeIDParserException }.map { R.color.colorErrorRed },
         )
     val recipeGrid =
         listOf(

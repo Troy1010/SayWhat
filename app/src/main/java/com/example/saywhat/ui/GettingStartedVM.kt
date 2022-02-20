@@ -1,4 +1,4 @@
-package com.example.saywhat.ui.main
+package com.example.saywhat.ui
 
 import android.content.Context
 import androidx.lifecycle.ViewModel

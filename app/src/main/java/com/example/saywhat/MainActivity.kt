@@ -2,7 +2,7 @@ package com.example.saywhat
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.saywhat.ui.main.GettingStartedFrag
+import com.example.saywhat.ui.GettingStartedFrag
 
 class MainActivity : AppCompatActivity() {
 

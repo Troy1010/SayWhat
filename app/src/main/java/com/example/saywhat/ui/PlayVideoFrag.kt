@@ -15,5 +15,7 @@ class PlayVideoFrag : Fragment(R.layout.frag_play_video) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         vb = FragPlayVideoBinding.bind(view)
+        // # Setup
+        lifecycle.addObserver(vb.youtubePlayerView)
     }
 }

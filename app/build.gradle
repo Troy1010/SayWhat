@@ -32,6 +32,19 @@ android {
 }
 
 dependencies {
+    // # TMCommonKotlin
+    //noinspection GradleDynamicVersion
+    implementation 'com.tminus1010.tmcommonkotlin:tmcommonkotlin-core:1.1.+'
+    //noinspection GradleDynamicVersion
+    implementation 'com.tminus1010.tmcommonkotlin:tmcommonkotlin-rx:1.1.+'
+    //noinspection GradleDynamicVersion
+    implementation 'com.tminus1010.tmcommonkotlin:tmcommonkotlin-misc:1.1.+'
+    //noinspection GradleDynamicVersion
+    implementation 'com.tminus1010.tmcommonkotlin:tmcommonkotlin-tuple:1.1.+'
+    //noinspection GradleDynamicVersion
+    implementation 'com.tminus1010.tmcommonkotlin:tmcommonkotlin-view:1.1.+'
+    //noinspection GradleDynamicVersion
+    implementation 'com.tminus1010.tmcommonkotlin:tmcommonkotlin-coroutines:1.1.+'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'

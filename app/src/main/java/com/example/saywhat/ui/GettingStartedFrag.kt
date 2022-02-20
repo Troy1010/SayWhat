@@ -8,6 +8,7 @@ import com.example.saywhat.R
 import com.example.saywhat.app.Errors
 import com.example.saywhat.app.YouTubeIDParserException
 import com.example.saywhat.databinding.FragGettingStartedBinding
+import com.tminus1010.tmcommonkotlin.coroutines.extensions.observe
 import com.tminus1010.tmcommonkotlin.rx.extensions.observe
 import com.tminus1010.tmcommonkotlin.view.extensions.nav
 import dagger.hilt.android.AndroidEntryPoint
@@ -31,7 +32,7 @@ class GettingStartedFrag : Fragment(R.layout.frag_getting_started) {
         errors.observe(viewLifecycleOwner) {
             when (it) {
                 is YouTubeIDParserException -> toaster.toast("Invalid YouTube link")
-                is MissingYouTubeLinkException -> toaster.toast("Please input a YouTube link")
+                is MissingYouTubeLinkException -> toaster.toast("Please enter a valid YouTube link")
                 else -> toaster.toast("Error occurred:${it.javaClass.simpleName}")
             }
 

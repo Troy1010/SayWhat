@@ -14,6 +14,6 @@
     <color name="colorOnDark">#fff</color>
     <color name="colorOnDarkSoft">#77ffffff</color>
     <color name="colorBackgroundHighlight">#111</color>
-    <color name="colorErrorRed">#900</color>
+    <color name="colorErrorRed">#f00</color>
     <color name="colorBackground">#333</color>
 </resources>

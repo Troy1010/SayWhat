@@ -7,7 +7,7 @@ import com.example.saywhat.app.Errors
 import com.example.saywhat.databinding.ItemButtonBinding
 import com.example.saywhat.databinding.ItemEditTextBinding
 import com.example.saywhat.databinding.ItemTextViewBinding
-import com.example.saywhat.ui.extensions.onDone
+import com.example.saywhat.extensions.onDone
 import com.tminus1010.tmcommonkotlin.misc.tmTableView.ViewItemRecipe3
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.subjects.PublishSubject

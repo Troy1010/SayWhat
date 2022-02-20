@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/gettingStartedFrag">
+
+    <fragment
+        android:id="@+id/gettingStartedFrag"
+        android:name="com.example.saywhat.ui.GettingStartedFrag"
+        android:label="frag_getting_started"
+        tools:layout="@layout/frag_getting_started" />
+    <fragment
+        android:id="@+id/playVideoFrag"
+        android:name="com.example.saywhat.ui.PlayVideoFrag"
+        android:label="frag_play_video"
+        tools:layout="@layout/frag_play_video" />
+</navigation>

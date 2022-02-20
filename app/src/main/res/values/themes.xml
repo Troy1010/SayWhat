@@ -1,6 +1,5 @@
 <resources>
-
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <style name="Theme.SayWhat" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="colorPrimary">#2D882D</item>
         <item name="colorPrimaryVariant">#55AA55</item>
         <item name="colorOnPrimary">@color/colorOnLight</item>
@@ -14,13 +13,13 @@
         <item name="android:colorBackground">@color/colorBackground</item>
     </style>
 
-    <style name="AppTheme.StandardTextView">
+    <style name="Theme.SayWhat.StandardTextView">
         <item name="android:textColor">?colorOnBackground</item>
         <item name="android:textSize">22sp</item>
         <item name="android:gravity">center</item>
     </style>
 
-    <style name="AppTheme.StandardEditText" parent="@android:style/Widget.EditText">
+    <style name="Theme.SayWhat.StandardEditText" parent="@android:style/Widget.EditText">
         <item name="android:textColor">@color/colorOnDark</item>
         <item name="android:textColorHint">@color/colorOnDarkSoft</item>
     </style>
@@ -42,5 +41,4 @@
         <item name="android:autoSizeMinTextSize">14sp</item>
         <item name="android:text">Category</item>
     </style>
-
 </resources>

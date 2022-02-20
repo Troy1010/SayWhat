@@ -69,6 +69,7 @@ class GettingStartedVM @Inject constructor(
                         // # Setup
                         vb.root.setOnClickListener { youTubeLinkEditTextTouched.easyEmit(Unit) }
                         originalColor = vb.root.currentTextColor
+                        vb.root.setText(appData.youtubeLink)
                         // # User Intents
                         vb.root.onDone { userSetYouTubeLink(it) }
                         // # State

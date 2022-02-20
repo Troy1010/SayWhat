@@ -19,7 +19,7 @@ class GettingStartedFrag : Fragment(R.layout.frag_getting_started) {
         gettingStartedVM.navForward.observe(viewLifecycleOwner) { TODO() }
         // # State
         vb.tmtableview.initialize(
-            recipeGrid = gettingStartedVM.recipeGrid.map { it.map { it.toViewItemRecipe(requireContext()) } },
+            recipeGrid = gettingStartedVM.recipeGrid.map { it.map { it(requireContext()) } },
             shouldFitItemWidthsInsideTable = true,
         )
     }

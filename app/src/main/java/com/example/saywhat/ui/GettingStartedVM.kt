@@ -33,13 +33,13 @@ class GettingStartedVM @Inject constructor(
 
     // # User Intents
     fun userSetYouTubeLink(s: String) {
-        runCatching { appData.youtubeLink = youTubeIDParser.parse(s) }
-            .getOrElse { appData.youtubeLink = null; errors.easyEmit(it) }
+        runCatching { appData.youTubeID.easyEmit(youTubeIDParser.parse(s)) }
+            .getOrElse { appData.youTubeID.easyEmit(null); errors.easyEmit(it) }
     }
 
     fun userSubmit() {
         when {
-            runCatching { appData.youtubeLink!! }.isFailure -> errors.easyEmit(MissingYouTubeLinkException())
+            runCatching { appData.youTubeID.value!! }.isFailure -> errors.easyEmit(MissingYouTubeLinkException())
             else -> navForward.easyEmit(Unit)
         }
     }
@@ -69,7 +69,7 @@ class GettingStartedVM @Inject constructor(
                         // # Setup
                         vb.root.setOnClickListener { youTubeLinkEditTextTouched.easyEmit(Unit) }
                         originalColor = vb.root.currentTextColor
-                        vb.root.setText(appData.youtubeLink)
+                        vb.root.setText(appData.youTubeID.value)
                         // # User Intents
                         vb.root.onDone { userSetYouTubeLink(it) }
                         // # State

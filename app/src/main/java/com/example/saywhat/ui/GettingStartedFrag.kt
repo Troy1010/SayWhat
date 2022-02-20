@@ -16,8 +16,8 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class GettingStartedFrag : Fragment(R.layout.frag_getting_started) {
-    private val gettingStartedVM by lazy { ViewModelProvider(this)[GettingStartedVM::class.java] }
     lateinit var vb: FragGettingStartedBinding
+    private val gettingStartedVM by lazy { ViewModelProvider(this)[GettingStartedVM::class.java] }
 
     @Inject
     lateinit var errors: Errors

@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModel
 import com.example.saywhat.R
+import com.example.saywhat.all.extensions.easyEmit
+import com.example.saywhat.all.extensions.onDone
 import com.example.saywhat.app.AppData
 import com.example.saywhat.app.Errors
 import com.example.saywhat.app.YouTubeIDParser
@@ -11,15 +13,10 @@ import com.example.saywhat.app.YouTubeIDParserException
 import com.example.saywhat.databinding.ItemButtonBinding
 import com.example.saywhat.databinding.ItemEditTextBinding
 import com.example.saywhat.databinding.ItemTextViewBinding
-import com.example.saywhat.all.extensions.easyEmit
-import com.example.saywhat.all.extensions.onDone
 import com.tminus1010.tmcommonkotlin.misc.extensions.bind
 import com.tminus1010.tmcommonkotlin.misc.tmTableView.ViewItemRecipe3
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.filter
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.merge
+import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 @HiltViewModel
@@ -53,6 +50,7 @@ class GettingStartedVM @Inject constructor(
             youTubeLinkEditTextTouched.map { null },
             errors.filter { it is YouTubeIDParserException }.map { R.color.colorErrorRed },
         )
+            .catch { errors.easyEmit(it) }
     val recipeGrid =
         listOf(
             listOf(

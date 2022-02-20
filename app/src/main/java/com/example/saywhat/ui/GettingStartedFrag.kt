@@ -30,6 +30,7 @@ class GettingStartedFrag : Fragment(R.layout.frag_getting_started) {
         vb = FragGettingStartedBinding.bind(view)
         // # Events
         errors.observe(viewLifecycleOwner) {
+            logz("Error:", it)
             when (it) {
                 is YouTubeIDParserException -> toaster.toast("Invalid YouTube link")
                 is MissingYouTubeLinkException -> toaster.toast("Please enter a valid YouTube link")

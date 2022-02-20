@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.saywhat.R
 import com.example.saywhat.app.Errors
 import com.example.saywhat.databinding.FragPlayVideoBinding
-import com.example.saywhat.extensions.easyEmit
+import com.example.saywhat.all.extensions.easyEmit
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import com.tminus1010.tmcommonkotlin.misc.extensions.bind

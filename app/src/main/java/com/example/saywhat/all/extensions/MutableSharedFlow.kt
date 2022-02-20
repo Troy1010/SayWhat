@@ -1,4 +1,4 @@
-package com.example.saywhat.extensions
+package com.example.saywhat.all.extensions
 
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.runBlocking

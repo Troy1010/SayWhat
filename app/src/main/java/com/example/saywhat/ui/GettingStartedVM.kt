@@ -1,6 +1,5 @@
 package com.example.saywhat.ui
 
-import android.app.Application
 import android.content.Context
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModel
@@ -21,7 +20,6 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.merge
-import kotlinx.coroutines.rx3.asFlow
 import javax.inject.Inject
 
 @HiltViewModel
@@ -36,18 +34,15 @@ class GettingStartedVM @Inject constructor(
     // # User Intents
     fun userSetYouTubeLink(s: String) {
         runCatching { appData.youtubeLink = youTubeIDParser.parse(s) }
-            .getOrElse { errors.easyEmit(it) }
+            .getOrElse { appData.youtubeLink = null; errors.easyEmit(it) }
     }
 
     fun userSubmit() {
         when {
-            runCatching { appData.youtubeLink }.isFailure -> errors.easyEmit(MissingYouTubeLinkException())
+            runCatching { appData.youtubeLink!! }.isFailure -> errors.easyEmit(MissingYouTubeLinkException())
             else -> navForward.easyEmit(Unit)
         }
     }
-
-    // # Internal
-    private var originalColor: Int? = null
 
     // # Events
     val navForward = MutableSharedFlow<Unit>()
@@ -69,6 +64,7 @@ class GettingStartedVM @Inject constructor(
             ),
             listOf(
                 { context: Context ->
+                    var originalColor: Int?
                     ViewItemRecipe3(context, ItemEditTextBinding::inflate) { vb ->
                         // # Setup
                         vb.root.setOnClickListener { youTubeLinkEditTextTouched.easyEmit(Unit) }

@@ -28,6 +28,7 @@ internal class YouTubeIDParserTest {
                 arguments("https://www.youtube.com/watch?v=uEUMVwc4o5U&ab_channel=BobRoss", "uEUMVwc4o5U", null),
                 arguments("S0Q4gqBUs7c", "S0Q4gqBUs7c", null),
                 arguments("oh no!", null, Exception()),
+                arguments("https://youtu.be/ILWEXRAnQd0", "ILWEXRAnQd0", null),
             )
         }
     }

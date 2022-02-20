@@ -1,4 +1,4 @@
-package com.example.saywhat.extensions
+package com.example.saywhat.all.extensions
 
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText

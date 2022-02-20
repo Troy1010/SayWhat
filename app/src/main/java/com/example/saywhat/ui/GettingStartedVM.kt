@@ -11,8 +11,8 @@ import com.example.saywhat.app.YouTubeIDParserException
 import com.example.saywhat.databinding.ItemButtonBinding
 import com.example.saywhat.databinding.ItemEditTextBinding
 import com.example.saywhat.databinding.ItemTextViewBinding
-import com.example.saywhat.extensions.easyEmit
-import com.example.saywhat.extensions.onDone
+import com.example.saywhat.all.extensions.easyEmit
+import com.example.saywhat.all.extensions.onDone
 import com.tminus1010.tmcommonkotlin.misc.extensions.bind
 import com.tminus1010.tmcommonkotlin.misc.tmTableView.ViewItemRecipe3
 import dagger.hilt.android.lifecycle.HiltViewModel

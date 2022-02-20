@@ -8,7 +8,9 @@ import com.example.saywhat.R
 import com.example.saywhat.databinding.FragGettingStartedBinding
 import com.tminus1010.tmcommonkotlin.rx.extensions.observe
 import com.tminus1010.tmcommonkotlin.view.extensions.nav
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class GettingStartedFrag : Fragment(R.layout.frag_getting_started) {
     private val gettingStartedVM by lazy { ViewModelProvider(this)[GettingStartedVM::class.java] }
     lateinit var vb: FragGettingStartedBinding

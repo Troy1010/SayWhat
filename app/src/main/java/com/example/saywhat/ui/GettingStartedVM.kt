@@ -2,14 +2,20 @@ package com.example.saywhat.ui
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
+import com.example.saywhat.app.AppData
 import com.example.saywhat.databinding.ItemButtonBinding
 import com.example.saywhat.databinding.ItemEditTextBinding
 import com.example.saywhat.databinding.ItemTextViewBinding
 import com.example.saywhat.ui.extensions.onDone
 import com.tminus1010.tmcommonkotlin.misc.tmTableView.ViewItemRecipe3
+import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.subjects.PublishSubject
+import javax.inject.Inject
 
-class GettingStartedVM : ViewModel() {
+@HiltViewModel
+class GettingStartedVM @Inject constructor(
+    private val appData: AppData
+) : ViewModel() {
     // # User Intents
     fun userSetYoutubeLink(s: String) {
         TODO()

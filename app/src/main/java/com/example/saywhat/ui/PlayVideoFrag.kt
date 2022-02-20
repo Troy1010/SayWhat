@@ -8,7 +8,9 @@ import com.example.saywhat.R
 import com.example.saywhat.databinding.FragGettingStartedBinding
 import com.example.saywhat.databinding.FragPlayVideoBinding
 import com.tminus1010.tmcommonkotlin.rx.extensions.observe
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PlayVideoFrag : Fragment(R.layout.frag_play_video) {
     lateinit var vb: FragPlayVideoBinding
 
